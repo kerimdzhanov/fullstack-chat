@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
+import {Layout, Panel, AppBar} from 'react-toolbox';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Layout className={styles.App}>
+        <Panel>
+          <AppBar>
+            <img src={logo} className={styles.AppLogo} alt="logo" />
+          </AppBar>
+
+          <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
+            <h2>Welcome to My Fullstack Chat!</h2>
+            <p className={styles.AppIntro}>
+              To get started, edit <code>src/App.js</code> and save to reload.
+            </p>
+          </div>
+        </Panel>
+      </Layout>
     );
   }
 }
